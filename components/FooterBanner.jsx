@@ -2,20 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { urlFor } from "../lib/client";
 
-const FooterBanner = ({
-  footerBanner: {
-    discount,
-    largeText1,
-    largeText2,
-    saleTime,
-    product,
-    buttonText,
-    image,
-    smallText,
-    midText,
-    desc,
-  },
-}) => {
+const FooterBanner = ({}) => {
   return (
     <div className="footer-banner-container">
       <div className="banner-desc">
@@ -31,12 +18,7 @@ const FooterBanner = ({
           <p>Hours of Operation:</p>
           <p>Monday - Friday</p>
           <p>8:00am - 5:00pm</p>
-
-            
-  
         </div>
-        {/* <img src={urlFor(image)} className="footer-banner-image" /> */}
-
       </div>
     </div>
   );

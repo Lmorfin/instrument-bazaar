@@ -2,7 +2,7 @@ import React from "react";
 import { Product, FooterBanner } from "../../components";
 import { client } from "../../lib/client";
 
-const Home = ({ product, bannerData, heroData }) => {
+const Home = ({ product }) => {
   return (
     <>
       <div className="hero-content">
@@ -23,7 +23,7 @@ const Home = ({ product, bannerData, heroData }) => {
           <Product key={product._id} product={product} />
         ))}
       </div>
-      <FooterBanner footerBanner={bannerData && bannerData[0]} />
+      <FooterBanner />
     </>
   );
 };
@@ -33,11 +33,8 @@ export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
   const product = await client.fetch(query);
 
-  const heroQuery = '*[_type == "hero"]';
-  const heroData = await client.fetch(heroQuery);
-
   return {
-    props: { product, bannerData, heroData },
+    props: { product },
   };
 };
 
