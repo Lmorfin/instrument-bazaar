@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { client, urlFor } from "../../../lib/client";
-import {
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiOutlineStar,
-  AiFillStar,
-} from "react-icons/ai";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Product from "../../../components/Product";
 import { useStateContext } from "../../../context/StateContext";
 
@@ -18,8 +13,7 @@ const ProductDetails = ({ product, products }) => {
     onAdd(product, qty);
 
     setShowCart(true);
-  }
-
+  };
 
   return (
     <div className="details-block">
@@ -43,16 +37,6 @@ const ProductDetails = ({ product, products }) => {
         </div>
         <div className="product-detail-desc">
           <h1 className="card-desc">{name}</h1>
-          {/* <div className="reviews">
-            <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
-            </div>
-            <p>(20)</p>
-          </div> */}
           <h4 className="card-desc">Details: </h4>
           <p className="card-desc">{details}</p>
           <p className="price">${price}</p>
@@ -69,7 +53,11 @@ const ProductDetails = ({ product, products }) => {
             </p>
           </div>
           <div className="buttons">
-            <button type="button" className="add-to-cart" onClick={() => onAdd(product, qty)}>
+            <button
+              type="button"
+              className="add-to-cart"
+              onClick={() => onAdd(product, qty)}
+            >
               Add to Cart
             </button>
             <button type="button" className="buy-now" onClick={handleBuyNow}>
@@ -83,7 +71,6 @@ const ProductDetails = ({ product, products }) => {
         <div className="marquee">
           <div className="maylike-products-container track">
             {products.map((item) => (
-            
               <Product key={item._id} product={item} />
             ))}
           </div>

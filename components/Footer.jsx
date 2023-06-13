@@ -1,8 +1,7 @@
 import React from "react";
-import { AiFillInstagram, AiOutlineTwitter } from "react-icons/ai";
-import {GiMusicalNotes} from "react-icons/gi";
-import {HiMusicNote} from "react-icons/hi";
-import {SlMusicToneAlt} from "react-icons/sl"
+import { GiMusicalNotes } from "react-icons/gi";
+import { HiMusicNote } from "react-icons/hi";
+import { SlMusicToneAlt } from "react-icons/sl";
 
 const Footer = () => {
   return (
